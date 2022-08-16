@@ -21,15 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
         #[Route('/movies', name: 'movies')]
         public function index(): Response
         {
-                // findAll() - SELECT * FROM movies;
-                // find() - SELECT * FROM movies WHERE id = 5;
-                // findBy() - SELECT * FROM movies ORDER BY id DESC;
-                // findOneBy() - SELECT * FROM movies WHERE id = 5 AND title = 'The Dark Night' ORDER BY id DESC;
-                // count() - SELECT COUNT() FROM movies WHERE id = 5;
-            $repository= $this->em -> getRepository(Movie::class);
-            $movies = $repository->getClassName();
-            dd($movies);
-
+                
             return $this->render('index.html.twig');
         }
 
