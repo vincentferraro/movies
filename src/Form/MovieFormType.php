@@ -22,7 +22,8 @@ class MovieFormType extends AbstractType
                     'placeholder' => 'Enter title...',
                     
                 ),
-                'label' => false
+                'label' => false,
+                'required'=>false
             ])
             ->add('releaseYear',IntegerType::class,[
                 'attr'=> array(
@@ -30,7 +31,8 @@ class MovieFormType extends AbstractType
                     'placeholder' => 'Enter Release Year...',
                     
                 ),
-                'label' => false
+                'label' => false,
+                'required'=>false
             ])
             ->add('description', TextAreaType::class,[
                 'attr'=> array(
@@ -38,16 +40,15 @@ class MovieFormType extends AbstractType
                     'placeholder' => 'Enter Description...',
                     
                 ),
-                'label' => false
+                'label' => false,
+                'required'=>false
             ])
-            ->add('imagePath', FileType::class,[
-                'attr'=> array(
-                    'class' => 'py-10'
-                    
-                ),
-                'label' => false
-            ])
-            //->add('actors')
+            ->add('imagePath', FileType::class, array(
+                'required' => false,
+                'mapped' => false,
+                'required' => false
+            ))
+            ////->add('actors')
         ;
     }
 
